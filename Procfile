@@ -1,1 +1,1 @@
-web: npm start
+web: cd CMS2 && node app.js
