@@ -27,7 +27,7 @@ app.use("/users", usersRoute)
 app.use("/search", searchRoute)
 
 app.get('/', (req, res) =>{
-    res.send('We are home')
+    res.sendFile(path.join(__dirname, 'cms2-frontend/build', 'index.html'));
 })
 
 mongoose.connect(process.env.DB_CONNECT, () =>{
