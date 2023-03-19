@@ -8,7 +8,7 @@ require("dotenv/config")
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, 'cms2-frontend')));
+app.use(express.static(path.join(__dirname, '..', 'cms2-frontend', 'build',)));
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.json());
@@ -27,7 +27,7 @@ app.use("/users", usersRoute)
 app.use("/search", searchRoute)
 
 app.get('/*', (req, res) =>{
-    res.sendFile(path.join(__dirname, 'cms2-frontend', 'index.html'));
+    res.sendFile(path.join(__dirname, '..', 'cms2-frontend', 'build', 'index.html'));
 })
 
 mongoose.connect(process.env.DB_CONNECT, () =>{
