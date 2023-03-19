@@ -3,10 +3,12 @@ const mongoose = require("mongoose")
 const bodyParser = require('body-parser');
 const cors = require("cors");
 const fileupload = require("express-fileupload");
+const path = require('path');
 require("dotenv/config")
 
 const app = express();
 
+app.use(express.static(path.join(__dirname, 'cms2-frontend/build')));
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.json());
