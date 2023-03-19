@@ -26,7 +26,7 @@ app.use("/posts", postsRoute)
 app.use("/users", usersRoute)
 app.use("/search", searchRoute)
 
-app.get('/', (req, res) =>{
+app.get('/*', (req, res) =>{
     res.sendFile(path.join(__dirname, 'cms2-frontend/build', 'index.html'));
 })
 
